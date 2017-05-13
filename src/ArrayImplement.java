@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Ethan Zeigler
+ * Copyright (c) 2017 Ethan Zeigler, Eric Giovannini
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ public class ArrayImplement {
         long startTime = System.currentTimeMillis();
         // open input
         BufferedReader input = new BufferedReader(new FileReader(new File(args[0])));
-        int numInsert = 0, numDelete = 0, namRetrieve = 0;
+        int numInsert = 0, numDelete = 0, numRetrieve = 0;
 
         List<Integer> data = new ArrayList<>();
 
@@ -61,7 +61,7 @@ public class ArrayImplement {
                 case 2:
                     // retrieve
                     if (data.contains(num)) {
-                        namRetrieve++;
+                        numRetrieve++;
                     }
             }
         }
@@ -71,7 +71,7 @@ public class ArrayImplement {
         long millisToComplete = System.currentTimeMillis() - startTime;
         System.out.println("Insertions:\t\t" + numInsert);
         System.out.println("Deletions:\t\t" + numDelete);
-        System.out.println("Retrievals:\t\t" + namRetrieve);
+        System.out.println("Retrievals:\t\t" + numRetrieve);
         System.out.println("Final data size:\t" + data.size());
         System.out.println("Time:\t\t\t" + millisToComplete / 1000D + " seconds");
     }
